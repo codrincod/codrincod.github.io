@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>cTrader OAuth Handler</title>
+    <style>
+        body { font-family: Arial; margin: 40px auto; max-width: 800px; }
+        .code-display { background: #f5f5f5; padding: 20px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>cTrader OAuth Redirect</h1>
+    <div class="code-display">
+        <h2>Authorization Code:</h2>
+        <pre id="auth-code"></pre>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        document.getElementById('auth-code').textContent = code || 'No code received';
+    </script>
+</body>
+</html>
